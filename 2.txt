@@ -1,3 +1,4 @@
 Suspendisse faucibus magna vitae tempus condimentum. Sed dapibus malesuada ante, vitae blandit mauris semper in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur cursus interdum accumsan. Morbi eu ultrices tellus. Nam justo magna, faucibus nec tortor id, ultricies hendrerit eros. Morbi at blandit ante. Duis suscipit accumsan nulla vel vehicula. Nunc sed purus laoreet, faucibus ex vehicula, consectetur dolor. Donec ut leo feugiat, iaculis mi sed, tincidunt eros. Vestibulum maximus semper est sed sodales. Duis sollicitudin pulvinar laoreet. Maecenas vulputate metus in leo tempus aliquet. Etiam viverra mauris sit amet diam faucibus tempus. Nulla non commodo tortor.
 
-Zmiana stopni na 375 C. Tu są nie samowite zmiany.
+
+Zmiana  stopni na 375 C. A tu kolejna zmiana.
