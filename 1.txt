@@ -1,2 +1,3 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dopisuje jakiś teks w języku polskim.
 Vivamus sed consequat lectus. Lubie płatki ac ultrices enim, nec sollicitudin nibh. Aenean tristique, odio quis commodo aliquam, elit arcu semper massa, eu convallis dui lorem vel tellus. Aenean egestas pulvinar leo, feugiat finibus elit rutrum ac. Sed in nibh quam. Sed mi dui, ultrices vel lacinia nec, pharetra sit amet metus. In lobortis mi eget urna dignissim tempor. Nullam porta tellus sit amet maximus hendrerit. Integer congue vulputate sodales. Nunc at viverra augue. Nunc ac sodales nunc. Proin at commodo ex. Suspendisse pharetra porta ante, in interdum lorem. Nulla imperdiet turpis eu efficitur molestie. Sed vitae eros vitae tortor dapibus aliquet.
+A teraz stworzyłem kolejny akapit , tak jak miało zostać zrobione.
