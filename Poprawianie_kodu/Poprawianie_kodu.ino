@@ -1,6 +1,7 @@
 #include <Wire.h>
 #include <Stepper.h>
 #include <Encoder.h>
+#include <PID_v1.h>
 #include <AccelStepper.h>
 // Pinout
 #define diEncA 2
@@ -10,7 +11,7 @@
 #define doStatusLED 13
 // pos 0, enc negative
 // Encoder variables
-long encRotation;
+double encRotation;
 Encoder Encoder0(diEncA , diEncB);
 
 // PID regulator variables
@@ -20,7 +21,8 @@ float Kp, Ki, Kd; //parameters
 float PastValueDeviation; //ostatnie odchylenie wyniku
 float ValueErrorSum; //suma błedów
 
-float OutputSignal; //sygnał wyjściowy
+double OutputSignal; //sygnał wyjściowy
+double Setpoint =0;
 unsigned long pidActTime, pidPrevTime;
 const int pidSamplingTime = 100; //ms 10Hz
 
@@ -39,6 +41,8 @@ float KD = 1;
 int16_t angleZeroOffset = 0;
 float Kd_cart = 10;
 
+PID pendulumPID(&encRotation,&OutputSignal,&Setpoint,KP,KI,KD,DIRECT);
+
 void setup() {
   pinMode(doStatusLED, OUTPUT);
   Serial.begin(9600);
@@ -48,6 +52,9 @@ void setup() {
   SetPIDPar(KP, KI, KD);
   Serial.println("angle speed");
   pidPrevTime = millis();
+
+  pendulumPID.SetMode(AUTOMATIC);
+  pendulumPID.SetTunings(KP,KI,KD);
 }
 
 void loop() {
@@ -71,8 +78,11 @@ void loop() {
     encRotation += cartP + cartD;// add PD terms to angle reading to cascade pids
     Serial.print(encRotation * 10);
 
-    PIDRegulator();
-    smVelocity = SignalToVelocity(OutputSignal, smMaxSpeed, -smMaxSpeed);
+    
+    pendulumPID.Compute();
+    //PIDRegulator();
+    pendulumPID.SetOutputLimits(-smMaxSpeed,smMaxSpeed);
+    smVelocity = OutputSignal; //SignalToVelocity(OutputSignal, smMaxSpeed, -smMaxSpeed);
     // disable pid if angle too high
     if (abs(encRotation) > 200) { //je
       smVelocity = 0;
